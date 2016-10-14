@@ -1,6 +1,13 @@
+//JavaScript Code for Exercise 2
 window.onload = function(){
-	var boundary1 = document.getElementById("boundary1");
-	boundary1.addEventListener("mouseover", function(){
-		boundary1.setAttribute("class", "boundary youlose");
-	});	
-};		
+	var allboun = document.querySelectorAll("div#maze div.boundary");
+	for (var x = 0; x < allboun.length; x++){
+		allboun[x].addEventListener("mouseover", turnRed);
+	}
+}
+function turnRed() {
+    var allboun = document.querySelectorAll("div#maze div.boundary");
+    for (var x = 0; x < allboun.length; x++){
+        allboun[x].setAttribute("class", "boundary youlose");
+    }
+}
