@@ -1,4 +1,4 @@
-//JavaScript Code for Exercise 4
+//JavaScript Code for Exercise 5
 var flag = false; //boolean to keep track if the user hit any maze walls.
 
 window.onload = function() {
@@ -21,15 +21,16 @@ function turnRed() {
 }
 
 function gameOver() {
+	var stat = document.getElementById("status");
     if(flag) {
-        alert("Oops! You lost.");
+        stat.innerHTML = "Oops! You lost.";
     } else {
-        alert("Congratulations! You win! :)");
+        stat.innerHTML = "Congratulations! You win! :)";
     }
 }
 
 function startGame() {
-	flag = false;
+	flag = false;	
     var allboun = document.querySelectorAll("div#maze div.boundary");
     for (var x = 0; x < allboun.length; x++){
         allboun[x].setAttribute("class", "boundary");
