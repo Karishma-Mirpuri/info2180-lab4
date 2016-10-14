@@ -1,4 +1,4 @@
-//JavaScript Code for Exercise 5
+//JavaScript Final Code
 var flag = false; //boolean to keep track if the user hit any maze walls.
 
 window.onload = function() {
@@ -32,6 +32,12 @@ function gameOver() {
 function startGame() {
 	flag = false;	
     var allboun = document.querySelectorAll("div#maze div.boundary");
+    document.addEventListener("mouseover", function(){
+    	if (event.clientX < maze.offsetLeft || event.clientY > maze.offsetRight)
+    	{
+    		turnRed();
+    	}
+    });
     for (var x = 0; x < allboun.length; x++){
         allboun[x].setAttribute("class", "boundary");
     }
